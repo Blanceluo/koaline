@@ -1,9 +1,9 @@
 const Koa = require('koa')
 const route = require('koa-route')
-// const cors = require('koa2-cors')
+const cors = require('koa2-cors')
 const app = new Koa()
 
-// app.use(cors())
+app.use(cors())
 
 app.use(route.get('/', async ctx => {
     ctx.body = {
