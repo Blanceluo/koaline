@@ -8,7 +8,10 @@ app.use(cors())
 app.use(route.get('/', async ctx => {
     ctx.body = {
         name: `${ctx.path}`,
-        mark: 'demo'
+        mark: {
+            title: '莫使金樽空对月',
+            title2: '唯有饮者留其名'
+        }
     }
     console.log(ctx.path)
 }))
