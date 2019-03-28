@@ -6,7 +6,12 @@ const app = new Koa()
 app.use(cors({
     origin: ctx => {
         console.log(ctx.req.headers.origin, 'origin')
-        return 'http://www.skywheel.xyz'
+        const ReqOrigin = ctx.req.headers.origin
+        if (ReqOrigin === 'http://www.skywheel.xyz') {
+            return true
+        } else {
+            return false
+        }
     }
 }))
 
