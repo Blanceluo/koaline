@@ -7,8 +7,9 @@ app.use(cors({
     origin: ctx => {
         console.log(ctx.req.headers.origin, 'origin')
         const ReqOrigin = ctx.req.headers.origin
-        if (ReqOrigin === 'http://www.skywheel.xyz') {
-            return true
+        const allowOrigin = 'http://www.skywheel.xyz'
+        if (ReqOrigin === allowOrigin) {
+            return allowOrigin
         } else {
             return false
         }
