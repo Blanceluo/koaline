@@ -5,7 +5,7 @@ const app = new Koa()
 
 app.use(cors({
     origin: ctx => {
-        console.log(ctx.req.url, 'origin')
+        console.log(ctx.req.originalUrl, 'origin')
         return 'http://www.skywheel.xyz'
     }
 }))
