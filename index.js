@@ -5,7 +5,7 @@ const app = new Koa()
 
 app.use(cors({
     origin: ctx => {
-        return 'http://www.skywheels.xyz'
+        return 'http://www.skywheel.xyz'
     }
 }))
 
@@ -21,7 +21,13 @@ app.use(route.get('/', async ctx => {
 }))
 
 app.use(route.get('/index', async ctx => {
-    ctx.body = '<h2>大家好</h2>'
+    ctx.body = `
+                <p>回忆是一种很奇妙的东西</p>
+                <p>它生活在过去</p>
+                <p>存在于现在</p>
+                <p>却能影响未来</p>
+                <p>--20181229</p>
+            `
     console.log(ctx.path)
 }))
 
