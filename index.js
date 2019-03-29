@@ -7,11 +7,7 @@ app.use(cors({
     origin: ctx => {
         const ReqOrigin = ctx.req.headers.origin
         const allowOrigin = 'http://www.skywheel.xyz'
-        if (ReqOrigin === allowOrigin) {
-            return allowOrigin
-        } else {
-            return false
-        }
+        return ReqOrigin
     }
 }))
 
