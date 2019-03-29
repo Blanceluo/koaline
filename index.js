@@ -3,18 +3,20 @@ const route = require('koa-route')
 const cors = require('koa2-cors')
 const app = new Koa()
 
-app.use(cors({
-    origin: ctx => {
-        console.log(ctx.req.headers.origin, 'origin')
-        const ReqOrigin = ctx.req.headers.origin
-        const allowOrigin = 'https://www.skywheel.xyz'
-        if (ReqOrigin === allowOrigin) {
-            return allowOrigin
-        } else {
-            return false
-        }
-    }
-}))
+// app.use(cors({
+//     origin: ctx => {
+//         console.log(ctx.req.headers.origin, 'origin')
+//         const ReqOrigin = ctx.req.headers.origin
+//         const allowOrigin = 'http://www.skywheel.xyz'
+//         if (ReqOrigin === allowOrigin) {
+//             return allowOrigin
+//         } else {
+//             return false
+//         }
+//     }
+// }))
+
+app.use(cors())
 
 app.use(route.get('/', async ctx => {
     ctx.body = {
