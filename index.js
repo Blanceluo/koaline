@@ -15,8 +15,6 @@ app.use(cors({
     }
 }))
 
-app.use(cors())
-
 app.use(route.get('/', async ctx => {
     ctx.body = {
         name: `${ctx.path}`,
