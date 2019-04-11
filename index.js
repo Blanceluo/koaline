@@ -35,7 +35,7 @@ app.use(route.get('/index', async ctx => {
 
 app.listen({
     port: 3000,
-    hots: '0.0.0.0'
+    host: '0.0.0.0'
 }, () => {
     console.log('application run at port 3000')
 })
